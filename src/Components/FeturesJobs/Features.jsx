@@ -18,6 +18,22 @@ const Features = () => {
           <Job key={job.id} job={job}></Job>
         ))}
       </div>
+
+      <div className="pt-10">
+        <div className={dataLength === jobs.length ? 'hidden' : ''}>
+          <button
+            onClick={() => setDataLength(jobs.length)}
+            className="btn btn-outline"
+          >
+            Show more
+          </button>
+        </div>
+        <div className={dataLength !== jobs.length ? 'hidden' : ''}>
+          <button onClick={() => setDataLength(4)} className="btn outline">
+            Show less
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
